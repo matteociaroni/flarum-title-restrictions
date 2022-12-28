@@ -1,0 +1,3 @@
+matteo-prevent-all-caps-titles:
+  api:
+    error: You can not write titles in all caps
