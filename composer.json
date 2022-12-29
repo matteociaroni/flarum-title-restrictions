@@ -25,9 +25,9 @@
             "title": "Titles restrictions",
             "category": "",
             "icon": {
-                "name": "",
-                "color": "",
-                "backgroundColor": ""
+                "name": "fa-solid fa-i-cursor",
+                "color": "white",
+                "backgroundColor": "red"
             }
         },
         "flarum-cli": {
