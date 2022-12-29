@@ -28,11 +28,11 @@ class TitleValidator
 
 			// if rule start with "min:", replace the value
 			if(\Illuminate\Support\Str::startsWith($rule, "min:"))
-				return "min:" . $this->settings->get("matteo-prevent-all-caps-titles.settings.min");
+				return "min:" . $this->settings->get("matteo-titles-restrictions.settings.min");
 
 			// if rule start with "max:", replace the value
 			if(\Illuminate\Support\Str::startsWith($rule, "max:"))
-				return "max:" . $this->settings->get("matteo-prevent-all-caps-titles.settings.max");
+				return "max:" . $this->settings->get("matteo-titles-restrictions.settings.max");
 
 			// else return the original value
 			return $rule;
@@ -41,7 +41,7 @@ class TitleValidator
 
 		// rule to require at least one letter in titles
 		$rules["title"][] = function($attribute, $value, $fail) {
-			$enabled = $this->settings->get("matteo-prevent-all-caps-titles.settings.require-letter");
+			$enabled = $this->settings->get("matteo-titles-restrictions.settings.require-letter");
 
 			if($enabled && !preg_match('/[A-Za-z]/', $value))
 				$fail("The title must contain some letters");
@@ -49,7 +49,7 @@ class TitleValidator
 
 		// rule to avoid all-caps in titles
 		$rules["title"][] = function($attribute, $value, $fail) {
-			$enabled = $this->settings->get("matteo-prevent-all-caps-titles.settings.avoid-all-caps");
+			$enabled = $this->settings->get("matteo-titles-restrictions.settings.avoid-all-caps");
 
 			if($enabled && $value == strtoupper($value) && $value != strtolower($value))
 				$fail("You can not write all-caps titles");
