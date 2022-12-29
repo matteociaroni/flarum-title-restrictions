@@ -6,6 +6,12 @@ use Flarum\Settings\SettingsRepositoryInterface;
 use Illuminate\Validation\Validator;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+/**
+ * This class manages requirements for discussion titles:
+ * - replace min and max length
+ * - avoid all-caps (if enabled)
+ * - require at least one letter (if enabled)
+ */
 class TitleValidator
 {
 	public function __construct(SettingsRepositoryInterface $settings)

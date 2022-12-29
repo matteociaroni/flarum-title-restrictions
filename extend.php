@@ -12,6 +12,7 @@ return [
 
 	new Extend\Locales(__DIR__ . "/locale"),
 
+	// extend DiscussionValidator with additional title requirements
 	(new Extend\Validator(DiscussionValidator::class))->configure(TitleValidator::class),
 
 	(new Extend\Settings())
