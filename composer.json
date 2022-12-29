@@ -1,6 +1,6 @@
 {
-    "name": "matteo/flarum-ext-prevent-all-caps-titles",
-    "description": "Prevent users to write all caps titles",
+    "name": "matteo/flarum-titles-restrictions",
+    "description": "Rules to rule titles",
     "keywords": [
         "flarum"
     ],
@@ -17,12 +17,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Matteo\\PreventAllCapsTitles\\": "src/"
+            "Matteo\\TitlesRestrictions\\": "src/"
         }
     },
     "extra": {
         "flarum-extension": {
-            "title": "Prevent all caps titles",
+            "title": "Titles restrictions",
             "category": "",
             "icon": {
                 "name": "",

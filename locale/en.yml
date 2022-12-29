@@ -1,3 +1,12 @@
-matteo-prevent-all-caps-titles:
-  api:
-    error: You can not write titles in all caps
+matteo-titles-restrictions:
+    admin:
+        min:
+            label: Minimum length
+        max:
+            label: Maximum length
+        avoid-all-caps:
+            label: Avoid all-caps
+            help: Avoid titles containing only uppercase letters.
+        require-letter:
+            label: Require at least one letter
+            help: Avoid titles containing only digits or symbols.
