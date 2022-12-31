@@ -26,18 +26,15 @@ class TitleValidator
 
 		// replace the default min and max values for titles
 		$rules["title"] = array_map(function(string $rule) {
-			$min = $this->settings->get("matteo-titles-restrictions.settings.min");
-			$max = $this->settings->get("matteo-titles-restrictions.settings.max");
+			$min = max($this->settings->get("matteo-titles-restrictions.settings.min"), 1);		// min must be greater than 0
+			$max = min($this->settings->get("matteo-titles-restrictions.settings.max"), 200);	// max must be less than 201
 
-			// if rule start with "min:", replace the value
-			if($min > 0 && $min < $max && Str::startsWith($rule, "min:"))
+			if($min <= $max && Str::startsWith($rule, "min:"))
 				return "min:" . $min;
 
-			// if rule start with "max:", replace the value
-			if($max > $min && Str::startsWith($rule, "max:"))
+			if($min <= $max && Str::startsWith($rule, "max:"))
 				return "max:" . $max;
 
-			// else return the original value
 			return $rule;
 
 		}, $rules["title"]);
