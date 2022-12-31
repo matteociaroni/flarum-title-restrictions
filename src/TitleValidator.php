@@ -3,6 +3,7 @@
 namespace Matteo\TitlesRestrictions;
 
 use Flarum\Settings\SettingsRepositoryInterface;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Validator;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -29,11 +30,11 @@ class TitleValidator
 			$max = $this->settings->get("matteo-titles-restrictions.settings.max");
 
 			// if rule start with "min:", replace the value
-			if($min > 0 && $min < $max && \Illuminate\Support\Str::startsWith($rule, "min:"))
+			if($min > 0 && $min < $max && Str::startsWith($rule, "min:"))
 				return "min:" . $min;
 
 			// if rule start with "max:", replace the value
-			if($max > $min && \Illuminate\Support\Str::startsWith($rule, "max:"))
+			if($max > $min && Str::startsWith($rule, "max:"))
 				return "max:" . $max;
 
 			// else return the original value
