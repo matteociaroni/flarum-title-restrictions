@@ -16,8 +16,8 @@ return [
 	(new Extend\Validator(DiscussionValidator::class))->configure(TitleValidator::class),
 
 	(new Extend\Settings())
-		->default("matteo-prevent-all-caps-titles.settings.avoid-all-caps", false)
-		->default("matteo-prevent-all-caps-titles.settings.avoid-all-numbers", false)
-		->default("matteo-prevent-all-caps-titles.settings.min", 3)
-		->default("matteo-prevent-all-caps-titles.settings.max", 80)
+		->default("matteo-titles-restrictions.settings.avoid-all-caps", false)
+		->default("matteo-titles-restrictions.settings.require-letter", false)
+		->default("matteo-titles-restrictions.settings.min", 3)
+		->default("matteo-titles-restrictions.settings.max", 80)
 ];
