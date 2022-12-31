@@ -10,6 +10,7 @@ app.initializers.add("matteo/flarum-titles-restrictions", () => {
 		.registerSetting({
 			setting: "matteo-titles-restrictions.settings.min",
 			label: app.translator.trans("matteo-titles-restrictions.admin.min.label"),
+			help: app.translator.trans("matteo-titles-restrictions.admin.min.help"),
 			type: "number",
 			min: 1,
 			default: 3,
@@ -19,6 +20,7 @@ app.initializers.add("matteo/flarum-titles-restrictions", () => {
 		.registerSetting({
 			setting: "matteo-titles-restrictions.settings.max",
 			label: app.translator.trans("matteo-titles-restrictions.admin.max.label"),
+			help: app.translator.trans("matteo-titles-restrictions.admin.max.help"),
 			type: "number",
 			min: 1,
 			default: 80,

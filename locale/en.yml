@@ -2,8 +2,10 @@ matteo-titles-restrictions:
     admin:
         min:
             label: Minimum length
+            help: This value must be greater than 0.
         max:
             label: Maximum length
+            help: This value must be greater than minimum and less than 201.
         avoid-all-caps:
             label: Avoid all-caps
             help: Avoid titles containing only uppercase letters.
