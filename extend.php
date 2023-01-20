@@ -1,6 +1,6 @@
 <?php
 
-namespace Matteo\TitlesRestrictions;
+namespace Matteo\TitleRestrictions;
 
 use Flarum\Extend;
 use Flarum\Foundation\ValidationException;
@@ -16,8 +16,8 @@ return [
 	(new Extend\Validator(DiscussionValidator::class))->configure(TitleValidator::class),
 
 	(new Extend\Settings())
-		->default("matteo-titles-restrictions.settings.avoid-all-caps", false)
-		->default("matteo-titles-restrictions.settings.require-letter", false)
-		->default("matteo-titles-restrictions.settings.min", 3)
-		->default("matteo-titles-restrictions.settings.max", 80)
+		->default("matteo-title-restrictions.settings.avoid-all-caps", false)
+		->default("matteo-title-restrictions.settings.require-letter", false)
+		->default("matteo-title-restrictions.settings.min", 3)
+		->default("matteo-title-restrictions.settings.max", 80)
 ];

@@ -1,5 +1,5 @@
 {
-    "name": "matteo/flarum-titles-restrictions",
+    "name": "matteo/flarum-title-restrictions",
     "description": "Rules to rule titles",
     "keywords": [
         "flarum"
@@ -17,12 +17,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Matteo\\TitlesRestrictions\\": "src/"
+            "Matteo\\TitleRestrictions\\": "src/"
         }
     },
     "extra": {
         "flarum-extension": {
-            "title": "Titles restrictions",
+            "title": "Title restrictions",
             "category": "",
             "icon": {
                 "name": "fa-solid fa-i-cursor",

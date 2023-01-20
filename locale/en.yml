@@ -1,4 +1,4 @@
-matteo-titles-restrictions:
+matteo-title-restrictions:
     admin:
         min:
             label: Minimum length
