@@ -24,6 +24,9 @@ class TitleValidator
 	{
 		$rules = $validator->getRules();
 
+		if (!array_key_exists("title", $rules))
+			return;
+
 		// replace the default min and max values for titles
 		$rules["title"] = array_map(function(string $rule) {
 			$min = max($this->settings->get("matteo-title-restrictions.settings.min"), 1);		// min must be greater than 0
@@ -43,7 +46,7 @@ class TitleValidator
 		$rules["title"][] = function($attribute, $value, $fail) {
 			$enabled = $this->settings->get("matteo-title-restrictions.settings.require-letter");
 
-			if($enabled && !preg_match('/[A-Za-z]/', $value))
+			if($enabled && !preg_match("/[A-Za-z]/", $value))
 				$fail("The title must contain some letters");
 		};
 
