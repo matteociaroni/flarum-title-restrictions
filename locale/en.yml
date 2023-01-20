@@ -12,3 +12,6 @@ matteo-title-restrictions:
         require-letter:
             label: Require at least one letter
             help: Avoid titles containing only digits or symbols.
+    error:
+        avoid-all-caps: You can not write all-caps titles
+        require-letter: The title must contain some letters

@@ -15,9 +15,10 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 class TitleValidator
 {
-	public function __construct(SettingsRepositoryInterface $settings)
+	public function __construct(SettingsRepositoryInterface $settings, TranslatorInterface $translator)
 	{
 		$this->settings = $settings;
+		$this->translator = $translator;
 	}
 
 	public function __invoke($flarumValidator, Validator $validator)
@@ -42,20 +43,22 @@ class TitleValidator
 
 		}, $rules["title"]);
 
+		$translator = $this->translator;
+
 		// rule to require at least one letter in titles
-		$rules["title"][] = function($attribute, $value, $fail) {
+		$rules["title"][] = function($attribute, $value, $fail) use ($translator) {
 			$enabled = $this->settings->get("matteo-title-restrictions.settings.require-letter");
 
 			if($enabled && !preg_match("/[A-Za-z]/", $value))
-				$fail("The title must contain some letters");
+				$fail($translator->trans("matteo-title-restrictions.error.require-letter"));
 		};
 
 		// rule to avoid all-caps in titles
-		$rules["title"][] = function($attribute, $value, $fail) {
+		$rules["title"][] = function($attribute, $value, $fail) use ($translator) {
 			$enabled = $this->settings->get("matteo-title-restrictions.settings.avoid-all-caps");
 
 			if($enabled && $value == strtoupper($value) && $value != strtolower($value))
-				$fail("You can not write all-caps titles");
+				$fail($translator->trans("matteo-title-restrictions.error.avoid-all-caps"));
 		};
 
 		$validator->setRules($rules);
