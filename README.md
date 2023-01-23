@@ -13,13 +13,13 @@ A [Flarum](http://flarum.org) extension to add some restrictions to titles:
 Install with composer:
 
 ```sh
-composer require matteociaroni/flarum-title-restrictions:"*"
+composer require matteociaroni/flarum-title-restrictions:dev-master
 ```
 
 ## Updating
 
 ```sh
-composer update matteociaroni/flarum-title-restrictions:"*"
+composer update matteociaroni/flarum-title-restrictions:dev-master
 php flarum migrate
 php flarum cache:clear
 ```
