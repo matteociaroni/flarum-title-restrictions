@@ -1,6 +1,6 @@
 <?php
 
-namespace Matteo\TitleRestrictions;
+namespace MatteoCiaroni\TitleRestrictions;
 
 use Flarum\Settings\SettingsRepositoryInterface;
 use Illuminate\Support\Str;
@@ -30,8 +30,8 @@ class TitleValidator
 
 		// replace the default min and max values for titles
 		$rules["title"] = array_map(function(string $rule) {
-			$min = max($this->settings->get("matteo-title-restrictions.settings.min"), 1);		// min must be greater than 0
-			$max = min($this->settings->get("matteo-title-restrictions.settings.max"), 200);	// max must be less than 201
+			$min = max($this->settings->get("matteociaroni-title-restrictions.settings.min"), 1);		// min must be greater than 0
+			$max = min($this->settings->get("matteociaroni-title-restrictions.settings.max"), 200);	// max must be less than 201
 
 			if($min <= $max && Str::startsWith($rule, "min:"))
 				return "min:" . $min;
@@ -47,18 +47,18 @@ class TitleValidator
 
 		// rule to require at least one letter in titles
 		$rules["title"][] = function($attribute, $value, $fail) use ($translator) {
-			$enabled = $this->settings->get("matteo-title-restrictions.settings.require-letter");
+			$enabled = $this->settings->get("matteociaroni-title-restrictions.settings.require-letter");
 
 			if($enabled && !preg_match("/[A-Za-z]/", $value))
-				$fail($translator->trans("matteo-title-restrictions.error.require-letter"));
+				$fail($translator->trans("matteociaroni-title-restrictions.error.require-letter"));
 		};
 
 		// rule to avoid all-caps in titles
 		$rules["title"][] = function($attribute, $value, $fail) use ($translator) {
-			$enabled = $this->settings->get("matteo-title-restrictions.settings.avoid-all-caps");
+			$enabled = $this->settings->get("matteociaroni-title-restrictions.settings.avoid-all-caps");
 
 			if($enabled && $value == strtoupper($value) && $value != strtolower($value))
-				$fail($translator->trans("matteo-title-restrictions.error.avoid-all-caps"));
+				$fail($translator->trans("matteociaroni-title-restrictions.error.avoid-all-caps"));
 		};
 
 		$validator->setRules($rules);

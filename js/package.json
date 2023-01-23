@@ -1,5 +1,5 @@
 {
-    "name": "@matteo/flarum-ext-prevent-all-caps-titles",
+    "name": "@matteociaroni/flarum-title-restrictions",
     "private": true,
     "version": "0.0.0",
     "devDependencies": {

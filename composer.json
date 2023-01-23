@@ -1,5 +1,5 @@
 {
-    "name": "matteo/flarum-title-restrictions",
+    "name": "matteociaroni/flarum-title-restrictions",
     "description": "Rules to rule titles",
     "keywords": [
         "flarum"
@@ -11,13 +11,13 @@
     },
     "authors": [
         {
-            "name": "Matteo",
+            "name": "Matteo Ciaroni",
             "role": "Developer"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Matteo\\TitleRestrictions\\": "src/"
+            "MatteoCiaroni\\TitleRestrictions\\": "src/"
         }
     },
     "extra": {
