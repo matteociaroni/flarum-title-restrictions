@@ -25,7 +25,7 @@
             "title": "Title restrictions",
             "category": "",
             "icon": {
-                "name": "fa-solid fa-i-cursor",
+                "name": "fa fa-i-cursor",
                 "color": "white",
                 "backgroundColor": "red"
             }
