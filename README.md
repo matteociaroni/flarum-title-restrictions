@@ -1,4 +1,4 @@
-# Title restriction for Flarum
+# Title restrictions for Flarum
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
